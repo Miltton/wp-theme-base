@@ -24,8 +24,10 @@
 					<h1><?php bloginfo( 'name' ); ?></h1>
 				</a>
 				
-				<nav role="navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'main-menu' ) ); ?>
+				<div id="mobile-nav-btn"><span></span><span></span><span></span></div>
+				
+				<nav id="nav" role="navigation" class="main-menu">
+					<?php wp_nav_menu( array( 'container' => false, 'depth' => 1 ) ); ?>
 				</nav>
 			</div>
 		</div>
