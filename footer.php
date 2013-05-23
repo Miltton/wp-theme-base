@@ -1,3 +1,14 @@
+    	</div> <!-- .page-content -->
+
+    	<footer class="page-footer" role="contentinfo">
+    		<div class="container">
+    			<div class="footer-container">
+    				footer
+    			</div>
+    		</div>
+    	</footer>
+    </div><!-- .wrapper -->
+
     <?php wp_footer(); ?>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
