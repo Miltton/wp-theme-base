@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpbasetheme\n"
-"POT-Creation-Date: 2013-06-04 17:15+0200\n"
-"PO-Revision-Date: 2013-06-04 17:16+0200\n"
+"POT-Creation-Date: 2013-06-04 18:55+0200\n"
+"PO-Revision-Date: 2013-06-04 18:56+0200\n"
 "Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language-Team: Webtakomo\n"
 "Language: en_EN\n"
@@ -10,9 +10,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n\n"
 "X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ../..\n"
+
+#: ../../comments.php:11
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: ../../comments.php:28
+msgid "Comment navigation"
+msgstr ""
+
+#: ../../comments.php:29
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../../comments.php:30
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../../comments.php:35
+msgid "Comments are closed."
+msgstr ""
+
+#: ../../comments.php:44
+msgid "Name"
+msgstr ""
+
+#: ../../comments.php:50
+msgid "Email"
+msgstr ""
+
+#: ../../comments.php:56
+msgid "Website"
+msgstr ""
 
 #: ../../functions.php:21
 msgid "Main menu"

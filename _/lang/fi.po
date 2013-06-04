@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpbasetheme\n"
-"POT-Creation-Date: 2013-06-04 17:23+0200\n"
-"PO-Revision-Date: 2013-06-04 17:25+0200\n"
+"POT-Creation-Date: 2013-06-04 19:00+0200\n"
+"PO-Revision-Date: 2013-06-04 19:01+0200\n"
 "Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language-Team: Webtakomo\n"
 "Language: fi\n"
@@ -10,9 +10,45 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2\n"
 "X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ../..\n"
+
+#: ../../comments.php:11
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Yksi ajatus aiheesta &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s ajatusta aiheesta &ldquo;%2$s&rdquo;"
+
+#: ../../comments.php:28
+msgid "Comment navigation"
+msgstr "Kommenttien navigaatio"
+
+#: ../../comments.php:29
+msgid "&larr; Older Comments"
+msgstr "&larr; Vanhemmat kommentit"
+
+#: ../../comments.php:30
+msgid "Newer Comments &rarr;"
+msgstr "Uudemmat kommentit &rarr;"
+
+#: ../../comments.php:35
+msgid "Comments are closed."
+msgstr "Kommentointi on suljettu."
+
+#: ../../comments.php:44
+msgid "Name"
+msgstr "Nimi"
+
+#: ../../comments.php:50
+msgid "Email"
+msgstr "Sähköposti"
+
+#: ../../comments.php:56
+msgid "Website"
+msgstr "Nettisivu"
 
 #: ../../functions.php:21
 msgid "Main menu"

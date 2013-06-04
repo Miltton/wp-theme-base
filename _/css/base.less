@@ -34,6 +34,10 @@ h6 { font: normal 14px/1.5 Helvetica, Arial, sans-serif; }
 
 // GENERAL
 html { overflow-y: scroll; }
+a {
+	color: #007CBD; text-decoration: none;
+	&:hover { text-decoration: underline; };
+}
 strong, b { font-weight: 700; }
 em, i { font-style: italic; }
 * {
@@ -72,6 +76,21 @@ em, i { font-style: italic; }
 	.current-page-ancestor a {  }
 }
 
+
+/* COMMENTS */
+.commentlist { padding: 0px; list-style: none; 
+	ol { list-style: none; padding-left: 20px; }
+}
+.comment { 
+	.comment-body{ background: #f3f3f3; padding: 10px; margin-bottom: 10px; }
+	&.byuser .comment-body { background: #C1E8F4; }
+}
+#commentform {
+	label { display: block; }
+	input, textarea { max-width: 400px; width: 100%; }
+	textarea { height: 140px; }
+	input[type="submit"] { width: auto; }
+}
 
 // FORMS
 input { max-width: 100%; padding: 6px; border: 1px solid #aaa; }

@@ -49,6 +49,7 @@ h4{font:normal 18px/1.5 Helvetica,Arial,sans-serif;}
 h5{font:normal 16px/1.5 Helvetica,Arial,sans-serif;}
 h6{font:normal 14px/1.5 Helvetica,Arial,sans-serif;}
 html{overflow-y:scroll;}
+a{color:#007CBD;text-decoration:none;}a:hover{text-decoration:underline;}
 strong,b{font-weight:700;}
 em,i{font-style:italic;}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
@@ -73,6 +74,13 @@ em,i{font-style:italic;}
 .main-menu li{display:inline;}
 .main-menu a{background:#fff;color:#333;display:inline-block;*display:inline;*zoom:1;padding:10px;text-decoration:none;}
 .main-menu a:hover{opacity:0.8;}
+.commentlist{padding:0px;list-style:none;}.commentlist ol{list-style:none;padding-left:20px;}
+.comment .comment-body{background:#f3f3f3;padding:10px;margin-bottom:10px;}
+.comment.byuser .comment-body{background:#C1E8F4;}
+#commentform label{display:block;}
+#commentform input,#commentform textarea{max-width:400px;width:100%;}
+#commentform textarea{height:140px;}
+#commentform input[type="submit"]{width:auto;}
 input{max-width:100%;padding:6px;border:1px solid #aaa;}
 input[type="submit"]{background:#009BFC;}
 input[type="submit"]:hover{opacity:0.8;}
