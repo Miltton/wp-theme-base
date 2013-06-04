@@ -48,6 +48,7 @@ h3{font:normal 21px/1.5 Helvetica,Arial,sans-serif;}
 h4{font:normal 18px/1.5 Helvetica,Arial,sans-serif;}
 h5{font:normal 16px/1.5 Helvetica,Arial,sans-serif;}
 h6{font:normal 14px/1.5 Helvetica,Arial,sans-serif;}
+html{overflow-y:scroll;}
 strong,b{font-weight:700;}
 em,i{font-style:italic;}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}

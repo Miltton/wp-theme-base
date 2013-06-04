@@ -5,13 +5,13 @@ define( 'IMAGES', THEME_DIR . '/_/images' );
 
 add_action( 'after_setup_theme', 'wpbasetheme_setup' );
 function wpbasetheme_setup() {
-	load_theme_textdomain( 'wpbasetheme', get_template_directory() . '/_/languages' );
+	load_theme_textdomain( 'wpbasetheme', get_template_directory() . '/_/lang' );
 
 	/* Shh.. Don't tell them that we haven't updated WP */
 	remove_action( 'wp_head', 'wp_generator' );
 
 	/* Editor styling */
-	add_editor_style( '/_/css/editor.css' );
+	add_editor_style( '_/css/editor.css' );
 
 	/* Theme supports */
 	add_theme_support( 'post-formats', array() );
