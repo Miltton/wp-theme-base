@@ -59,7 +59,9 @@ em, i { font-style: italic; }
 .page-footer { background: #6BD2F4; .clearfix(); } 
 .header-container { .column(12); }
 .footer-container { .column(12); }
-.primary { .column(9); }
+.primary { .column(9); 
+	&.full { .column(12); }
+}
 .secondary { .column(3); }
 
 
@@ -83,7 +85,7 @@ em, i { font-style: italic; }
 }
 .comment { 
 	.comment-body{ background: #f3f3f3; padding: 10px; margin-bottom: 10px; }
-	&.byuser .comment-body { background: #C1E8F4; }
+	&.byuser > .comment-body { background: #C1E8F4; }
 }
 #commentform {
 	label { display: block; }

@@ -67,7 +67,7 @@ em,i{font-style:italic;}
 .page-footer:after{clear:both;}
 .header-container{display:inline;float:left;width:97.91666666666666%;margin:0 1.0416666666666665%;}
 .footer-container{display:inline;float:left;width:97.91666666666666%;margin:0 1.0416666666666665%;}
-.primary{display:inline;float:left;width:72.91666666666666%;margin:0 1.0416666666666665%;}
+.primary{display:inline;float:left;width:72.91666666666666%;margin:0 1.0416666666666665%;}.primary.full{display:inline;float:left;width:97.91666666666666%;margin:0 1.0416666666666665%;}
 .secondary{display:inline;float:left;width:22.916666666666664%;margin:0 1.0416666666666665%;}
 #mobile-nav-btn{display:none;}
 .main-menu ul{list-style:none;padding:0px;margin:0px;}
@@ -76,7 +76,7 @@ em,i{font-style:italic;}
 .main-menu a:hover{opacity:0.8;}
 .commentlist{padding:0px;list-style:none;}.commentlist ol{list-style:none;padding-left:20px;}
 .comment .comment-body{background:#f3f3f3;padding:10px;margin-bottom:10px;}
-.comment.byuser .comment-body{background:#C1E8F4;}
+.comment.byuser>.comment-body{background:#C1E8F4;}
 #commentform label{display:block;}
 #commentform input,#commentform textarea{max-width:400px;width:100%;}
 #commentform textarea{height:140px;}

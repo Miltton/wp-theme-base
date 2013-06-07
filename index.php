@@ -7,7 +7,6 @@
 	<?php endif; ?>
 </section><!-- .primary -->
 
-<aside class="secondary" role="complementary">
-	<?php get_sidebar(); ?>
-</aside><!-- .secondary -->
+<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
