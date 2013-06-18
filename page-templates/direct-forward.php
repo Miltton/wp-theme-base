@@ -1,9 +1,9 @@
 <?php
 /*
-Template Name: Direct Forward
+Template Name: Redirect Forward
 @package WordPress
 */
-__( 'Direct Forward', 'wpbasetheme' );
+__( 'Redirect Forward', 'wpbasetheme' );
 $pagekids = get_pages("child_of=".$post->ID."&sort_column=menu_order");
 if ($pagekids) {
 	$firstchild = $pagekids[0];

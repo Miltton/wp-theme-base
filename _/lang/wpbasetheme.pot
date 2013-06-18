@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpbasetheme\n"
-"POT-Creation-Date: 2013-06-04 18:55+0200\n"
-"PO-Revision-Date: 2013-06-04 18:56+0200\n"
+"POT-Creation-Date: 2013-06-18 11:42+0200\n"
+"PO-Revision-Date: 2013-06-18 11:42+0200\n"
 "Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language-Team: Webtakomo\n"
 "Language: en_EN\n"
@@ -15,36 +15,40 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ../..\n"
 
-#: ../../comments.php:11
+#: ../../404.php:4
+msgid "404 Error - Unfortunately, page not found."
+msgstr ""
+
+#: ../../comments.php:10
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgstr ""
 
-#: ../../comments.php:28
+#: ../../comments.php:27
 msgid "Comment navigation"
 msgstr ""
 
-#: ../../comments.php:29
+#: ../../comments.php:28
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: ../../comments.php:30
+#: ../../comments.php:29
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: ../../comments.php:35
+#: ../../comments.php:34
 msgid "Comments are closed."
 msgstr ""
 
-#: ../../comments.php:44
+#: ../../comments.php:43
 msgid "Name"
 msgstr ""
 
-#: ../../comments.php:50
+#: ../../comments.php:49
 msgid "Email"
 msgstr ""
 
-#: ../../comments.php:56
+#: ../../comments.php:55
 msgid "Website"
 msgstr ""
 
@@ -65,5 +69,5 @@ msgid "No posts found."
 msgstr ""
 
 #: ../../page-templates/direct-forward.php:6
-msgid "Direct Forward"
+msgid "Redirect Forward"
 msgstr ""
