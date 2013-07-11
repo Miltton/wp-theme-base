@@ -36,7 +36,11 @@ if ( post_password_required() )
 
 	<?php endif; // have_comments() ?>
 
-	<?php 
+	<?php
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+
 	$comment_form_args = array(
 		'fields' =>  array(
 		  'author' =>
@@ -56,7 +60,7 @@ if ( post_password_required() )
 		    '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 		    '" /></p>',
 		),
-		'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . 
+		'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'wpbasetheme' ) . 
 		'</label><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
 		'comment_notes_after' => ''
 	);

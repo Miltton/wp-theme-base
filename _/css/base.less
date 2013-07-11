@@ -1,5 +1,6 @@
-@import '../libs/normalize.less';
+@import (less) '../libs/normalize.css';
 @import '../libs/grid.less';
+//@import (less) '../libs/flexslider/flexslider.css';
 
 @column-width: 60;
 @gutter-width: 20;
@@ -87,6 +88,7 @@ img { max-width: 100%; height: auto; }
 .comment { 
 	.comment-body{ background: #f3f3f3; padding: 10px; margin-bottom: 10px; }
 	&.byuser > .comment-body { background: #C1E8F4; }
+	.comment-awaiting-moderation { color: orange; }
 }
 #commentform {
 	label { display: block; }
@@ -104,8 +106,7 @@ input[type="submit"]:hover { opacity: 0.8; }
 // GALLERY
 .gallery {
 	.gallery-item { float: left; text-align: center; }
-	img {  }
-	.gallery-caption { }
+	.gallery-caption { margin: 0px; }
 }
 .gallery-columns-1 .gallery-item { .wp-gallery-columns(1); }
 .gallery-columns-2 .gallery-item { .wp-gallery-columns(2); }

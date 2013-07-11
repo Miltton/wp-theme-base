@@ -6,3 +6,4 @@ Just another WordPress base theme which boosts developement for new themes.
 - [Normalize v2.1.2](http://necolas.github.io/normalize.css/)
 - [Semantic.gs v1.2](http://semantic.gs/)
 - [Responsive Nav v1.0.14](http://responsive-nav.com/)
+- [Flexslider v2.1](http://flexslider.woothemes.com/)
