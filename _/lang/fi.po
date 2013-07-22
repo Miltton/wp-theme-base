@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wpbasetheme\n"
 "POT-Creation-Date: 2013-07-22 10:42+0200\n"
-"PO-Revision-Date: 2013-07-22 10:43+0200\n"
+"PO-Revision-Date: 2013-07-22 12:06+0200\n"
 "Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language-Team: Webtakomo <janne@janneleppanen.com>\n"
 "Language: fi\n"
@@ -72,11 +72,11 @@ msgstr "sivu"
 
 #: ../../index.php:11
 msgid "&larr; Older posts"
-msgstr "&larr; Vanhemmat kommentit"
+msgstr "&larr; Vanhemmat julkaisut"
 
 #: ../../index.php:12
 msgid "Newer posts &rarr;"
-msgstr "Uudemmat kommentit &rarr;"
+msgstr "Uudemmat julkaisut &rarr;"
 
 #: ../../index.php:16
 msgid "No posts found."
