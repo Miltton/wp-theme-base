@@ -29,6 +29,9 @@
 				<nav id="nav" role="navigation" class="main-menu">
 					<?php wp_nav_menu( array( 'container' => false, 'depth' => 1 ) ); ?>
 				</nav>
+
+				<?php get_search_form(); ?>
+			
 			</div>
 		</div>
 	</header>

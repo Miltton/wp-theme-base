@@ -2,6 +2,10 @@
 define( 'THEME_DIR', get_template_directory_uri() );
 define( 'IMAGES', THEME_DIR . '/_/images' );
 
+include( '_/php/breadcrumb.php' );
+include( '_/php/page-views.php' );
+
+
 add_action( 'after_setup_theme', 'wpbasetheme_setup' );
 function wpbasetheme_setup() {
 	load_theme_textdomain( 'wpbasetheme', get_template_directory() . '/_/lang' );
@@ -24,10 +28,10 @@ function wpbasetheme_setup() {
 	/* Theme has its own gallery styles */
 	add_filter( 'use_default_gallery_style', '__return_false' );
 
-	/* Theme supports */
+	/* Add theme supports */
 	//add_theme_support( 'post-formats', array() );
 
-	/* Navigations */
+	/* Add Menus */
 	register_nav_menus( array(
 		'main-menu' => __( 'Main menu', 'wpbasetheme' )
 	) );
@@ -83,4 +87,33 @@ function wpbasetheme_antispambot_the_content_filter( $content ) {
 	}
 	return $content;
 }
+
+/* Redefine default gallery elements */
+add_shortcode('gallery', 'wpbasetheme_gallery_shortcode');
+function wpbasetheme_gallery_shortcode( $attr ) {
+	$attr['itemtag']   	= 'div';
+	$attr['icontag']    = 'div';
+	$attr['captiontag']	= 'figure';
+	return gallery_shortcode($attr);
+}
+
+/* Url translations */
+add_action('init', 're_rewrite_rules');
+function re_rewrite_rules() {
+    global $wp_rewrite;
+    $wp_rewrite->pagination_base    = __( 'page', 'wpbasetheme' );
+}
+
+function the_numeric_pagination()
+{
+    global $wp_query;
+    $big = 999999;
+    echo paginate_links(array(
+        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
+        'format' => '?paged=%#%',
+        'current' => max(1, get_query_var('paged')),
+        'total' => $wp_query->max_num_pages
+    ));
+}
+
 ?>
