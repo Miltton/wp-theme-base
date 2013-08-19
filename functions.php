@@ -2,9 +2,17 @@
 define( 'THEME_DIR', get_template_directory_uri() );
 define( 'IMAGES', THEME_DIR . '/_/images' );
 
-include( '_/php/breadcrumb.php' );
-include( '_/php/page-views.php' );
+wpbasetheme_include(array(
+	'breadcrumb',
+	'page-views',
+	'metabox',
+	));
 
+function wpbasetheme_include( $includes ) {
+	foreach ( $includes as $include ) {
+		include( "_/php/{$include}.php");
+	}
+}
 
 add_action( 'after_setup_theme', 'wpbasetheme_setup' );
 function wpbasetheme_setup() {
@@ -98,8 +106,8 @@ function wpbasetheme_gallery_shortcode( $attr ) {
 }
 
 /* Url translations */
-add_action('init', 're_rewrite_rules');
-function re_rewrite_rules() {
+add_action('init', 'wpbasetheme_rewrite_rules');
+function wpbasetheme_rewrite_rules() {
     global $wp_rewrite;
     $wp_rewrite->pagination_base    = __( 'page', 'wpbasetheme' );
 }
@@ -116,4 +124,11 @@ function the_numeric_pagination()
     ));
 }
 
+function the_blog_url() {
+	echo get_the_blog_url();
+}
+
+function get_the_blog_url() {
+	return get_permalink( get_option( 'page_for_posts' ) );
+}
 ?>

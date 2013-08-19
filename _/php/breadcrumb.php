@@ -2,7 +2,7 @@
 /* Breadcrumb for pages and categories */
 function the_breadcrumb( $separator = '»' ) {
 	global $post;
-	if( ! is_home() && ! is_single() ) {
+	if( ! is_home() && ( is_page() || is_category() ) ) {
 		echo '<div class="breadcrumb">';
 		?>
 		<a href="<?php echo get_option( 'home' ); ?>"><?php echo bloginfo( 'name' ); ?></a> <?php echo $separator; ?>
