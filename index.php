@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php the_breadcrumb( '»' ); ?>
-
 <section class="primary" role="main">
 	<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 		<?php get_template_part( 'content' ); ?>

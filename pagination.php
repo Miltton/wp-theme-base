@@ -5,4 +5,4 @@
 	<div class="newer-posts-link">
 		<?php previous_posts_link( __( 'Newer posts &rarr;', 'wpbasetheme' ) ); ?>
 	</div>
-</div>
+</div><!-- .pagination -->

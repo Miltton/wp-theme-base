@@ -3,19 +3,14 @@
     	<footer class="page-footer" role="contentinfo">
     		<div class="container">
     			<div class="footer-container">
-    				footer
-    			</div>
+    				<?php echo '&copy; ' . get_bloginfo('name') . '. ' . date('Y'); ?>
+    			</div><!-- .footer-container -->
     		</div>
-    	</footer>
+    	</footer><!-- .page-footer -->
     </div><!-- .wrapper -->
 
     <?php wp_footer(); ?>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src='//www.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
+    
+    <div class="hide"><?php dynamic_sidebar( 'google-analytics' ); ?></div>
 </body>
 </html>
