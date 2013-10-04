@@ -15,7 +15,6 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
 <div class="wrapper">
 	<header class="page-header" role="banner">
 		<div class="container">
@@ -29,7 +28,6 @@
 				<nav id="nav" role="navigation" class="main-menu">
 					<?php wp_nav_menu( array( 'container' => false, 'depth' => 1 ) ); ?>
 				</nav>
-			
 			</div>
 		</div>
 	</header>
