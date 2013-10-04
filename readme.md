@@ -7,3 +7,4 @@ Just another WordPress base theme which boosts developement for new themes.
 - [Semantic.gs v1.2](http://semantic.gs/)
 - [Responsive Nav v1.0.14](http://responsive-nav.com/)
 - [FlexSlider v2.1](http://flexslider.woothemes.com/)
+- [Magnific Popup v0.9.5](http://dimsemenov.com/plugins/magnific-popup/)
