@@ -10,7 +10,7 @@
     <title><?php wp_title( '|', true, 'right'); ?><?php bloginfo( 'name' ); ?></title> 
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
     
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php wp_head(); ?>
 </head>
@@ -26,7 +26,7 @@
 				<div id="mobile-nav-btn"><span></span><span></span><span></span></div>
 				
 				<nav id="nav" role="navigation" class="main-menu">
-					<?php wp_nav_menu( array( 'container' => false, 'depth' => 1 ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => false, 'depth' => 1 ) ); ?>
 				</nav>
 			</div>
 		</div>
