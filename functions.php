@@ -44,7 +44,7 @@ WB_Theme::initialize(function() {
 	WB_Theme::set_js(array(
 		array( 'modernizr', 		'/_/libs/modernizr.js', 						array(), 			false ),
 		array( 'flexslider', 		'/_/libs/flexslider/jquery.flexslider-min.js', 	array('jquery'), 	true ),
-		array( 'magnific-popup', 	'/_/libs/magnific-popup/magnific-popup.js', 	array('jquery'), 	true ),
+		array( 'magnific-popup', 	'/_/libs/magnific-popup/jquery.magnific-popup.min.js', 	array('jquery'), 	true ),
 		array( 'theme-functions', 	'/_/js/functions.js', 							array('jquery'), 	true ),
 		array( 'responsive-nav', 	'/_/libs/responsive-nav.min.js', 				array(), 			true ),
 	));
