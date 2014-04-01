@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpbasetheme\n"
-"POT-Creation-Date: 2013-07-22 10:42+0200\n"
-"PO-Revision-Date: 2013-07-22 12:06+0200\n"
+"POT-Creation-Date: 2014-04-01 17:27+0200\n"
+"PO-Revision-Date: 2014-04-01 17:27+0200\n"
 "Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language-Team: Webtakomo <janne@janneleppanen.com>\n"
 "Language: fi\n"
@@ -10,7 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.6\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;WB_Theme::__;"
+"self::__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ../..\n"
@@ -26,69 +27,92 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Yksi ajatus aiheesta &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s ajatusta aiheesta &ldquo;%2$s&rdquo;"
 
-#: ../../comments.php:27
+#: ../../comments.php:26
 msgid "Comment navigation"
 msgstr "Kommenttien navigaatio"
 
-#: ../../comments.php:28
+#: ../../comments.php:27
 msgid "&larr; Older Comments"
 msgstr "&larr; Vanhemmat kommentit"
 
-#: ../../comments.php:29
+#: ../../comments.php:28
 msgid "Newer Comments &rarr;"
 msgstr "Uudemmat kommentit &rarr;"
 
-#: ../../comments.php:34
+#: ../../comments.php:33
 msgid "Comments are closed."
 msgstr "Kommentointi on suljettu."
 
-#: ../../comments.php:47
+#: ../../comments.php:46
 msgid "Name"
 msgstr "Nimi"
 
-#: ../../comments.php:53
+#: ../../comments.php:52
 msgid "Email"
 msgstr "Sähköposti"
 
-#: ../../comments.php:59
+#: ../../comments.php:58
 msgid "Website"
 msgstr "Nettisivu"
 
-#: ../../functions.php:36
-msgid "Main menu"
-msgstr "Päävalikko"
+#: ../../content.php:22
+msgid "Edit"
+msgstr "Muokkaa"
 
-#: ../../functions.php:54
+#: ../../content.php:32
+msgid "Continue reading &rarr;"
+msgstr "Lue lisää &rarr;"
+
+#: ../../content.php:33
+msgid "Pages:"
+msgstr "Sivut:"
+
+#: ../../functions.php:22
 msgid "Sidebar"
 msgstr "Sivupalkki"
 
-#: ../../functions.php:56
-msgid "Widgets goes here."
-msgstr "Aseta vimpaimet tähän."
+#: ../../functions.php:28
+msgid "Google Analytics"
+msgstr "Google Analytics -skripti"
 
-#: ../../functions.php:104
-msgid "page"
-msgstr "sivu"
+#: ../../functions.php:35
+msgid "Main menu"
+msgstr "Päävalikko"
 
 #: ../../index.php:11
+msgid "No posts found."
+msgstr "Viestejä ei löytynyt."
+
+#: ../../pagination.php:3
 msgid "&larr; Older posts"
 msgstr "&larr; Vanhemmat julkaisut"
 
-#: ../../index.php:12
+#: ../../pagination.php:6
 msgid "Newer posts &rarr;"
 msgstr "Uudemmat julkaisut &rarr;"
-
-#: ../../index.php:16
-msgid "No posts found."
-msgstr "Viestejä ei löytynyt."
 
 #: ../../searchform.php:3
 msgid "Search"
 msgstr "Etsi"
 
-#: ../../page-templates/direct-forward.php:6
+#: ../../page-templates/direct-forward.php:10
 msgid "Redirect Forward"
 msgstr "Ohjaa eteenpäin"
+
+#: ../../_/php/class-wb-theme.php:87
+msgid "page"
+msgstr "sivu"
+
+#: ../../_/php/class-wb-theme.php:93
+msgid "Default sidebar"
+msgstr "Oletussivupalkki"
+
+#: ../../_/php/class-wb-theme.php:94
+msgid "Place widgets here."
+msgstr "Aseta vimpaimet tähän."
+
+#~ msgid "Does it work like that?"
+#~ msgstr "Toimii tää, tästä vaan?"
 
 #~ msgid "Older posts"
 #~ msgstr "Vanhemmat julkaisut"

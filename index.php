@@ -8,7 +8,7 @@
 	<?php get_template_part( 'pagination' ); ?>
 		
 	<?php else : ?>
-		<?php _e( 'No posts found.', 'wpbasetheme' ); ?>
+		<?php WB_Theme::_e( 'No posts found.' ); ?>
 	<?php endif; ?>
 
 </section><!-- .primary -->

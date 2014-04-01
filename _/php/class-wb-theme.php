@@ -10,8 +10,9 @@ class WB_Theme {
 	private static $css_files	= array();
 	private static $js_files  	= array();
 
-	public function initialize() {
-		add_action("after_setup_theme", array(__CLASS__, 'after_setup_theme'));
+	public function initialize( $callback ) {
+		add_action( "after_setup_theme", array(__CLASS__, 'after_setup_theme'), 5 );
+		add_action( "after_setup_theme", $callback, 10 );
 	}
 
 	public static function after_setup_theme() {
@@ -33,17 +34,15 @@ class WB_Theme {
 		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
-		// Theme has its own gallery styles 
+		add_action( 'admin_menu',			array( __CLASS__, 'admin_menu') );
+		add_action( 'wp_enqueue_scripts',	array( __CLASS__, 'wp_enqueue_scripts') );
+		add_action( 'wp_dashboard_setup',	array( __CLASS__, 'remove_dashboard_widgets') );
+		add_action( 'init',					array( __CLASS__, 'rewrite_rules') );
+		add_action( 'widgets_init', 		array( __CLASS__, 'register_sidebars' ) );
+
 		add_filter( 'use_default_gallery_style', '__return_false' );
-
-		self::register_menus();
-		self::register_sidebars();
-
-		add_action( 'admin_menu',			array(__CLASS__, 'admin_menu') );
-		add_action( 'wp_enqueue_scripts',	array(__CLASS__, 'wp_enqueue_scripts') );
-		add_action( 'wp_dashboard_setup',	array(__CLASS__, 'remove_dashboard_widgets') );
-		add_filter( 'the_content',			array(__CLASS__, 'antispambot_the_content_filter') );	
-		add_action( 'init',					array(__CLASS__, 'rewrite_rules') );
+		add_filter( 'wp_title', 			array( __CLASS__, 'wp_title' ) );
+		add_filter( 'the_content',			array( __CLASS__, 'antispambot_the_content_filter') );
 	}
 
 	public function admin_menu() {
@@ -74,20 +73,25 @@ class WB_Theme {
 		return $content;
 	}
 
+	public static function wp_title( $title )
+	{
+		if( empty( $title ) && ( is_home() || is_front_page() ) ) {
+			return bloginfo( 'name' ) . ' | ' . get_bloginfo( 'description' );
+		} else {
+			return $title . get_bloginfo( 'name' );
+		}
+	}
+
 	public function rewrite_rules() {
 		global $wp_rewrite;
     	$wp_rewrite->pagination_base    = self::__( 'page' );
 	}
 
 	public function register_sidebars() {
-		// TODO: What is this?
-		global $wp_widget_factory;  
-    	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-
 		$defaults = array(
 			'id' 			=> 'sidebar', 
-		 	'name' 			=> 'Sidebar',
-		 	'description'	=> 'Oletus',
+		 	'name' 			=> self::__( 'Default sidebar' ),
+		 	'description'	=> self::__( 'Place widgets here.' ),
 		 	'body_element'	=> 'div', 
 		 	'title_elemnt' 	=> 'h3'
 		);
@@ -96,8 +100,8 @@ class WB_Theme {
 			$sidebar = array_merge($defaults, $sidebar);
 			register_sidebar( array(
 				'id'			=> $sidebar['id'],
-				'name' 			=> self::__( $sidebar['name'] ),
-				'description'	=> self::__( $sidebar['description'] ),
+				'name' 			=> $sidebar['name'],
+				'description'	=> $sidebar['description'],
 				'before_widget'	=> '<div id="%1$s" class="widget %2$s language-switch">',
 				'after_widget'	=> '</div>',
 				'before_title' 	=> '<h3 class="widget-title">',
@@ -106,14 +110,9 @@ class WB_Theme {
 		}
 	}
 
-	public function register_menus() {
-		$menus = self::$menus;
-
-		foreach( $menus as $key => $menu ) {
-			$menu = self::__($menu);
-		}
-
-		register_nav_menus($menus);
+	public function set_menus($menus_arr) {
+		self::$menus = $menus_arr;
+		register_nav_menus(self::$menus);
 	}
 
 	public function wp_enqueue_scripts() {
@@ -136,10 +135,6 @@ class WB_Theme {
 
 	public function set_sidebars( $sidebar_arr ) {
 		self::$sidebars = $sidebar_arr;
-	}
-
-	public function set_menus( $menu_arr ) {
-		self::$menus = $menu_arr;
 	}
 
 	public function set_css( $css_arr ) {
