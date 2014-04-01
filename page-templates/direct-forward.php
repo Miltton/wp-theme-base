@@ -7,7 +7,7 @@
  * @package wpbasetheme
  */
 
-__( 'Redirect Forward', 'wpbasetheme' );
+WB_Theme::__( 'Redirect Forward' );
 $pagekids = get_pages("child_of=".$post->ID."&sort_column=menu_order");
 if ($pagekids) {
 	$firstchild = $pagekids[0];
