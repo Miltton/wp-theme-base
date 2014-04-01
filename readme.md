@@ -1,5 +1,5 @@
 # WP base theme
-Just another WordPress base theme which boosts developement for new themes.
+Class-based starter theme for WordPress theme development.
 
 ## Libraries
 - [Modernizr v2.7.1](http://modernizr.com/)
