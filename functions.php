@@ -13,7 +13,7 @@ define( 'IMAGES', 			THEME_DIR . '/_/images' );
 WB_Shortcode::initialize();
 
 /*
-	Anonymous Functions excepts PHP 5.3.0 or higher
+	Anonymous Functions expects PHP 5.3.0 or higher
 */
 WB_Theme::initialize(function() {
 	WB_Theme::set_sidebars(array(
