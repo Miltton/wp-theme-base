@@ -15,7 +15,7 @@
 	<header class="page-header" role="banner">
 		<div class="container">
 			<div class="header-container">
-				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display') ); ?>" rel="home">
+				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<h1><?php bloginfo( 'name' ); ?></h1>
 				</a>
 				

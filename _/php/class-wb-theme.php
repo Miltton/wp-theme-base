@@ -10,7 +10,7 @@ class WB_Theme {
 	private static $css_files	= array();
 	private static $js_files  	= array();
 
-	public function initialize( $callback ) {
+	public static function initialize( $callback ) {
 		add_action( "after_setup_theme", array(__CLASS__, 'after_setup_theme'), 5 );
 		add_action( "after_setup_theme", $callback, 10 );
 	}
@@ -34,24 +34,25 @@ class WB_Theme {
 		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
-		add_action( 'admin_menu',			array( __CLASS__, 'admin_menu') );
-		add_action( 'wp_enqueue_scripts',	array( __CLASS__, 'wp_enqueue_scripts') );
-		add_action( 'wp_dashboard_setup',	array( __CLASS__, 'remove_dashboard_widgets') );
-		add_action( 'init',					array( __CLASS__, 'rewrite_rules') );
+		add_action( 'admin_menu',			array( __CLASS__, 'admin_menu' ) );
+		add_action( 'wp_enqueue_scripts',	array( __CLASS__, 'wp_enqueue_scripts' ) );
+		add_action( 'wp_dashboard_setup',	array( __CLASS__, 'remove_dashboard_widgets' ) );
+		add_action( 'init',					array( __CLASS__, 'rewrite_rules' ) );
 		add_action( 'widgets_init', 		array( __CLASS__, 'register_sidebars' ) );
 
 		add_filter( 'use_default_gallery_style', '__return_false' );
 		add_filter( 'wp_title', 			array( __CLASS__, 'wp_title' ) );
-		add_filter( 'the_content',			array( __CLASS__, 'antispambot_the_content_filter') );
+		add_filter( 'the_content',			array( __CLASS__, 'antispambot_the_content_filter' ) );
+		add_filter( 'wp_revisions_to_keep', array( __CLASS__, 'limit_revisions' ), 10, 2 );
 	}
 
-	public function admin_menu() {
+	public static function admin_menu() {
 		// remove_menu_page( 'tools.php' ); 			// tools
 		// remove_menu_page( 'edit-comments.php' ); 	// comments
 		// remove_menu_page( 'edit.php' ); 				// posts
 	}
 
-	public function remove_dashboard_widgets() {
+	public static function remove_dashboard_widgets() {
 		$user = wp_get_current_user();
 		if( $user->has_cap( 'manage_options') ) {
 			remove_meta_box( 'dashboard_recent_comments', 	'dashboard', 'normal' );
@@ -64,7 +65,7 @@ class WB_Theme {
 		}
 	}
 
-	public function antispambot_the_content_filter($content) {
+	public static function antispambot_the_content_filter($content) {
 		$matches = array();
 		preg_match_all( "/\b\w+\@\w+[\.\w+]+\b/", $content, $matches);
 		foreach( $matches[0] as $match ){
@@ -82,12 +83,12 @@ class WB_Theme {
 		}
 	}
 
-	public function rewrite_rules() {
+	public static function rewrite_rules() {
 		global $wp_rewrite;
     	$wp_rewrite->pagination_base    = self::__( 'page' );
 	}
 
-	public function register_sidebars() {
+	public static function register_sidebars() {
 		$defaults = array(
 			'id' 			=> 'sidebar', 
 		 	'name' 			=> self::__( 'Default sidebar' ),
@@ -110,12 +111,12 @@ class WB_Theme {
 		}
 	}
 
-	public function set_menus($menus_arr) {
+	public static function set_menus($menus_arr) {
 		self::$menus = $menus_arr;
 		register_nav_menus(self::$menus);
 	}
 
-	public function wp_enqueue_scripts() {
+	public static function wp_enqueue_scripts() {
 		foreach( self::$css_files as $css_file ) {
 			wp_register_style( $css_file[0], THEME_DIR . $css_file[1], $css_file[2], self::VERSION, $css_file[3] );
 		}
@@ -133,16 +134,20 @@ class WB_Theme {
 		}
 	}
 
-	public function set_sidebars( $sidebar_arr ) {
+	public static function set_sidebars( $sidebar_arr ) {
 		self::$sidebars = $sidebar_arr;
 	}
 
-	public function set_css( $css_arr ) {
+	public static function set_css( $css_arr ) {
 		self::$css_files = $css_arr;
 	}
 
-	public function set_js( $js_arr ) {
+	public static function set_js( $js_arr ) {
 		self::$js_files = $js_arr;
+	}
+
+	public static function limit_revisions( $num, $post ) {
+	    return 3;
 	}
 
 	public static function __($str) { return __($str, self::NAME); }
