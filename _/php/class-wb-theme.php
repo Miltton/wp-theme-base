@@ -44,6 +44,12 @@ class WB_Theme {
 		add_filter( 'wp_title', 			array( __CLASS__, 'wp_title' ) );
 		add_filter( 'the_content',			array( __CLASS__, 'antispambot_the_content_filter' ) );
 		add_filter( 'wp_revisions_to_keep', array( __CLASS__, 'limit_revisions' ), 10, 2 );
+		add_filter( 'mce_buttons_2',		array( __CLASS__, 'mce_style_select' ) );
+		add_filter( 'tiny_mce_before_init', array( __CLASS__, 'mce_custom_styles' ) );
+
+		add_filter( 'login_headerurl', 		array( __CLASS__, 'login_headerurl') );
+		add_filter( 'login_headertitle', 	array( __CLASS__, 'login_headertitle') );
+		add_action( 'login_enqueue_scripts',array( __CLASS__, 'login_enqueue_scripts') );
 	}
 
 	public static function admin_menu() {
@@ -148,6 +154,55 @@ class WB_Theme {
 
 	public static function limit_revisions( $num, $post ) {
 	    return 3;
+	}
+
+	public static function login_enqueue_scripts() { 
+		?>
+	    <style type="text/css">
+	    	body.login {
+	    		background: #f3f3f3;
+	    	}
+	        body.login div#login h1 a {
+	            background: #fff url() center center no-repeat;
+	            background-size: contain;
+	            width: 100%;
+	            height: 144px;
+	            display: block;
+	        }
+	    </style>
+		<?php 
+	}
+
+	public static function login_headerurl() {
+    	return get_bloginfo( 'url' );
+	}
+	
+	public static function login_headertitle() {
+	    return get_bloginfo( 'name' );
+	}
+
+	public static function mce_style_select( $buttons ) {
+		array_unshift( $buttons, 'styleselect' );
+		return $buttons;
+	}
+
+	public static function mce_custom_styles( $init_array ) {  
+		$style_formats = array(  
+			array(
+				'title' 	=> 'Button',
+				'selector' 	=> 'a',
+				'classes' 	=> 'btn'
+			),
+			array(
+				'title' 	=> 'Uppercase',
+				'selector' 	=> 'p',
+				'classes' 	=> 'uppercase'
+			)
+		);  
+
+		$init_array['style_formats'] = json_encode( $style_formats );  
+
+		return $init_array;  
 	}
 
 	public static function __($str) { return __($str, self::NAME); }
