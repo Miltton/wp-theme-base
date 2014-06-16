@@ -14,7 +14,7 @@
 @gutter-width: 20;
 @columns: 12;
 @total-width: 100%;
-@blue: #0090ff;
+@main-color: #0090ff;
 
 
 
@@ -88,7 +88,7 @@ blockquote {
 
 /* Header
 ======================================= */
-.page-header { background: @blue; .clearfix(); }
+.page-header { background: @main-color; .clearfix(); }
 .site-name {
 	color: #fff;
 	&:hover { text-decoration: none; }
@@ -168,7 +168,7 @@ input[type="submit"]:hover { opacity: 0.8; }
 .page-footer {
 	background: #333; color: #fff;
 }
-
+.mobile-jump-top { display: none; }
 
 
 /* Animations
@@ -186,11 +186,15 @@ a, input[type="submit"] {
 /* Media queries
 ======================================= */
 @media screen and (max-width:62.5em) { // max-width: 1000px
-	// Layout	
+	
+	/* Layout
+	============= */	
 	.primary { .column(12); }
 	.secondary { .column(12); }
 	
-	// Navigation
+
+	/* Navigation
+	============= */
 	.js #mobile-nav-btn {
 		background: #fff; width: 42px; padding: 2px; display: block; float: right;
 		span { height: 5px; margin: 5px; display: block; background: #333; }
@@ -200,6 +204,18 @@ a, input[type="submit"] {
 		overflow: hidden; width: 100%;
 		&.opened { max-height: 9999px; }
 		a { width: 100%; }
+	}
+
+
+	/* Jump Top
+	=========== */
+	.scrolled .mobile-jump-top { text-align: center; color: #fff; background: darken( @main-color, 10%); display: block; position: absolute; z-index: 1000; bottom: 0px; left: 0;right: 0; }
+	.scrolled .mobile-jump-top { padding: 10px; position: fixed; &:hover { opacity: 1; } }
+	.page-footer {
+		.container { padding-bottom: 0px; }
+		padding-bottom: 40px;
+		.widget { margin: 0px 0px 20px 0px; }
+		.widget_series-menu { display: none; }
 	}
 }
 

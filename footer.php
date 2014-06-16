@@ -6,6 +6,8 @@
     				<?php echo '&copy; ' . get_bloginfo('name') . '. ' . date('Y'); ?>
     			</div><!-- .footer-container -->
     		</div>
+
+            <a class="mobile-jump-top"><span><?php WB_Theme::_e( 'Jump top' ); ?></span></a>
     	</footer><!-- .page-footer -->
     </div><!-- .wrapper -->
 
